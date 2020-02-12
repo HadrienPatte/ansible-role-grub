@@ -15,7 +15,7 @@ before_script:
   - cd hadrienpatte.grub
 
 script:
-  - molecule test
+  - molecule lint
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

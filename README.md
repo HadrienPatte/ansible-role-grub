@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/HadrienPatte/ansible-role-grub.svg?branch=master)](https://travis-ci.com/HadrienPatte/ansible-role-grub)
 
-An Ansible Role that configures grub.
+An Ansible Role that configures Grub.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ None.
 
 ## Role Variables
 
-None.
+* `grub_timeout`: Grub timeout, defaults to `10`
 
 # Dependencies
 

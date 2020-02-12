@@ -9,7 +9,10 @@ galaxy_info:
   platforms:
     - name: Debian
       versions: all
-  galaxy_tags: []
+    - name: Ubuntu
+      version: all
+  galaxy_tags:
+    - grub
 
 dependencies: []
 ...

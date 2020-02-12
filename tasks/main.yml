@@ -1,1 +1,21 @@
 ---
+- name: Configure Grub
+  ini_file:
+    path: /etc/default/grub
+    section: null
+    no_extra_spaces: true
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+    state: present
+  loop:
+    - option: GRUB_DEFAULT
+      value: saved
+
+    - option: GRUB_SAVEDEFAULT
+      value: "true"
+
+    - option: GRUB_TIMEOUT
+      value: "{{ grub_timeout }}"
+
+  notify: Reload Grub configuration
+...
