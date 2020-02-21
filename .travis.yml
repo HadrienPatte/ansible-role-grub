@@ -1,15 +1,27 @@
 ---
+dist: bionic
 language: python
-python:
-  - 3.6
+python: 3.8
 cache: pip
 
-install:
-  - pip install -r requirements.txt
+stages:
+  - lint
 
-script:
-  - yamllint .
-  - ansible-lint -v
+jobs:
+  include:
+    - name: yamllint
+      stage: lint
+      install:
+        - pip install yamllint
+      script:
+        - yamllint .
+
+    - name: ansible-lint
+      stage: lint
+      install:
+        - pip install ansible-lint
+      script:
+        - ansible-lint -v
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
