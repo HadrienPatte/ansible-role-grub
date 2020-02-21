@@ -1,6 +1,4 @@
 ---
-services: docker
-
 language: python
 python:
   - 3.6
@@ -9,13 +7,9 @@ cache: pip
 install:
   - pip install -r requirements.txt
 
-before_script:
-  - cd ..
-  - mv ansible-role-grub hadrienpatte.grub
-  - cd hadrienpatte.grub
-
 script:
-  - molecule lint
+  - yamllint .
+  - ansible-lint -v
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

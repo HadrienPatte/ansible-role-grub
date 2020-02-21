@@ -1,1 +1,2 @@
-molecule[docker]
+yamllint
+ansible-lint
